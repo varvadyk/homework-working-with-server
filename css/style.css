@@ -1,0 +1,99 @@
+body {
+	background-image: url(../images/starwars.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	min-height: 95vh;
+}
+
+h1 {
+	color: #800000;
+}
+
+
+
+
+
+.btn_personage,
+.btn_planets {
+	font-size: 20px;
+	border-radius: 50px;
+}
+
+.search__film {
+	display: flex;
+	justify-content: center;
+
+}
+
+.search_btn,
+.search_wrapper {
+	font-size: 18px;
+}
+
+.planets {
+	overflow-x: hidden;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+
+
+}
+
+.personage {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.image {
+	width: 300px;
+}
+
+.character {
+	background-color: gainsboro;
+	margin: 20px 20px;
+	padding: 20px;
+}
+
+
+.planets_data {
+	width: 170px;
+	background-color: gainsboro;
+	margin: 20px 20px;
+	padding: 20px;
+}
+
+.planets_name {
+	font-size: 24px;
+	color: red;
+}
+
+.planets_btn {
+	font-size: 20px;
+	background-color: #fff;
+	margin-left: 10px;
+
+}
+
+.planets_climate,
+.planets_diameter {
+	font-family: Arial;
+}
+
+.btn_prev,
+.btn_next {
+	border: 0;
+	outline: none;
+	background: transparent;
+
+}
+
+i {
+	font-size: 30px !important;
+}
+
+.none {
+
+	display: none;
+}
