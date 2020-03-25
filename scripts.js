@@ -1,6 +1,9 @@
 const BaseUrl = "https://swapi.co/api";
+const home = document.querySelector('.btn_home')
+const box = document.querySelector(".personage");
 const formWrap = document.querySelector(".form__wrapper");
 const formSearch = document.querySelector(".search__film");
+const container = document.querySelector(".planets");
 let page = 1;
 let nextPages = 1;
 let prevPages = 1;
@@ -24,10 +27,16 @@ const images = {
 	'https://swapi.co/api/people/17/': './images/Porkins.webp',
 	'https://swapi.co/api/people/18/': './images/Raymus.webp',
 };
+home.addEventListener("click", function () {
+	box.classList.add('none')
+	container.classList.add('none')
+	planetsPrev.classList.add('none')
+	planetNext.classList.add('none')
+})
 
 function getImage(url) {
 	if (images[url] == undefined) {
-		return './img/starwarsicon.png';
+		return './images/starwarsicon.png';
 	} else {
 		return images[url];
 	}
@@ -36,7 +45,7 @@ function getImage(url) {
 
 function getInfoPersonage(film) {
 	const url = `${BaseUrl}/films/${film}`;
-	const box = document.querySelector(".personage");
+
 	fetch(url)
 		.then((response) => {
 			return response.json();
@@ -46,6 +55,7 @@ function getInfoPersonage(film) {
 				fetch(url).then((res) => res.json())
 			);
 			Promise.all(userFetch).then((filmsData) => {
+
 				box.innerHTML = "";
 				filmsData.forEach((character) => {
 					let filmsData = document.createElement("div");
@@ -79,7 +89,7 @@ function renderPlanets(page) {
 		})
 		.
 	then((data) => {
-		const container = document.querySelector(".planets");
+
 		container.innerHTML = "";
 		data.results.map((planet) => {
 			let planetsDiv = document.createElement("div");
